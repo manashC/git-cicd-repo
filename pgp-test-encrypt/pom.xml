@@ -75,8 +75,8 @@
 		</plugins>
 	</build>
 	<scm>
-		<connection>scm:git:http://${scmuser}@bitbucket.org/aminul1983/bp-fast-track-v1.git</connection>
-		<tag>HEAD</tag>
+		<connection>scm:git:https://github.com/manashC/git-cicd-repo.git</connection>		
+		<tag>MASTER</tag>
 	</scm>
 	<distributionManagement>
 		<repository>
