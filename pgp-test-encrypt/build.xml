@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="pgp-test-encrypt">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../AnypointStudio-for-win-64bit-7.3.1-201811211926/AnypointStudio/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Mule Server 4.1.4 EE.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/commons-cli-1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/commons-codec-1.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/disruptor-3.3.7.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/exec"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/jcl-over-slf4j-1.7.25.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/jul-to-slf4j-1.7.25.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/licm-2.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/log4j-1.2-api-2.11.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/log4j-api-2.11.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/log4j-core-2.11.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/log4j-slf4j-impl-2.11.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/mule-module-boot-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/oscore-2.2.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/propertyset-1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/slf4j-api-1.7.25.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/truelicense-1.29.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/truexml-1.29.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/boot/wrapper-3.5.35.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/api-gateway-api-1.1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/api-gateway-client-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/api-gateway-contract-service-api-1.1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/api-gateway-core-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/api-gateway-reflection-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-api-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-artifact-declaration-1.1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-core-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-core-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-extensions-api-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-extensions-api-dsql-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-extensions-api-persistence-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-extensions-soap-api-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-message-metadata-model-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-metadata-model-api-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-metadata-model-catalog-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-metadata-model-java-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-metadata-model-json-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-metadata-model-persistence-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-metadata-model-raml-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-metadata-model-xml-1.1.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-analytics-gw-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-api-deployment-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-artifact-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-autodiscovery-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-batch-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-bti-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-cache-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-cluster-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-container-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-deployment-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-deployment-model-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-deployment-model-impl-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-dsl-api-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-extensions-soap-support-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-extensions-spring-support-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-extensions-support-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-extensions-xml-support-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-global-config-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-http-policy-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-http-policy-api-1.1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-kryo-serializer-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-launcher-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-license-api-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-license-impl-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-logging-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-plugin-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-policies-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-policy-api-1.1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-repository-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-service-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-spring-config-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-spring-config-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-tls-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-tooling-support-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-tracking-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-module-xa-tx-ee-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-mvel2-2.1.9-MULE-017.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-service-http-api-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-service-oauth-api-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/mule-service-soap-api-4.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/mule/repository"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/activation-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aether-api-1.0.2.v20150114.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aether-connector-basic-1.0.2.v20150114.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aether-impl-1.0.2.v20150114.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aether-spi-1.0.2.v20150114.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aether-transport-file-1.0.2.v20150114.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aether-transport-http-1.0.2.v20150114.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aether-util-1.0.2.v20150114.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/animal-sniffer-annotations-1.14.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/annotations-3.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/antlr-runtime-3.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/antlr4-runtime-4.5.1-1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/api-annotations-1.0.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aspectjrt-1.8.10.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/aspectjweaver-1.8.10.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/btf-1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/c3p0-0.9.5.2-MULE-001.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/caffeine-2.6.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/cglib-nodep-3.2.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/checker-qual-2.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-beanutils-1.9.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-collections-3.2.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-dbutils-1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-digester-1.8.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-io-2.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-lang-2.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-lang3-3.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-pool-1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-pool2-2.5.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/commons-validator-1.5.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/config-1.3.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/dom4j-1.6.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/ehcache-core-2.5.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/error_prone_annotations-2.1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/FastInfoset-1.2.13.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/fastutil-8.1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/geronimo-j2ee-connector_1.5_spec-2.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/grabbag-1.8.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/gson-2.8.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/guava-25.1-jre.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/handlebars-4.0.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/hazelcast-3.10.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/hazelcast-client-3.10.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/hk2-api-2.3.0-b05.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/hk2-locator-2.3.0-b05.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/hk2-utils-2.3.0-b05.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/httpclient-4.5.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/httpcore-4.4.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/istack-commons-runtime-3.0.5.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/j2objc-annotations-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jackson-annotations-2.9.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jackson-core-2.9.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jackson-coreutils-1.8.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jackson-databind-2.9.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jackson-module-jsonSchema-2.9.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/javassist-3.7.ga.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/javax.inject-1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/javax.jms-api-2.0.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/javax.json-1.0.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/javax.json-api-1.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/javax.transaction-api-1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/javax.ws.rs-api-2.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jaxb-api-2.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jaxb-core-2.3.0-MULE-001.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jaxb-runtime-2.3.0-MULE-001.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jaxen-1.1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jcommander-1.69.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jersey-common-2.11.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jersey-guava-2.11.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jgrapht-jdk1.5-0.7.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/joda-time-2.9.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jopt-simple-5.0.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/json-20160810.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/json-schema-core-1.2.8.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/json-schema-validator-2.2.8.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/jsr305-3.0.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/juniversalchardet-1.0.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/kryo-serializers-0.42.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/kryo-shaded-4.0.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/libphonenumber-8.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/mailapi-1.4.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/mapdb-1.0.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-aether-provider-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-artifact-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-builder-support-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-model-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-model-builder-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-repository-metadata-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-settings-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/maven-settings-builder-3.3.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/mchange-commons-java-0.2.11.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/minlog-1.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/msg-simple-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/mule-btm-2.1.8.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/mule-classloader-model-3.1.7.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/mule-maven-client-api-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/mule-maven-client-impl-1.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/objenesis-2.5.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/org.eclipse.sisu.plexus-0.3.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/org.everit.json.schema-1.5.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/osgi-resource-locator-1.0.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/plexus-cipher-1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/plexus-component-annotations-1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/plexus-interpolation-1.21.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/plexus-sec-dispatcher-1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/plexus-utils-3.0.24.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/raml-parser-2-1.0.27.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/reactive-streams-1.0.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/reactor-core-3.2.0.M1-MULE-002.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/reactor-extra-3.1.2.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/reflections-0.9.10.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/rhino-1.7R4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/semver4j-2.0.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/snakeyaml-1.18.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/spring-aop-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/spring-beans-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/spring-context-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/spring-context-support-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/spring-core-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/spring-expression-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/stax-ex-1.7.8.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/stringtemplate-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/txw2-2.3.0-MULE-001.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/uri-template-0.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/uuid-3.4.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/validation-api-1.1.0.Final.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/xerces2-xsd11-2.11.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/xmlbeans-2.6.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/xmlschema-core-2.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/lib/opt/yagi-1.0.27.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/services/api-gateway-contract-service-1.0.1-mule-service.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/services/mule-service-http-ee-1.1.4-mule-service.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/animal-sniffer-annotations-1.14.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/checker-qual-2.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/commons-io-2.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/commons-lang3-3.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/commons-text-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/connection-pool-2.3.36-MULE-002.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/error_prone_annotations-2.1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/geronimo-servlet_3.0_spec-1.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/grizzly-framework-2.3.36-MULE-002.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/grizzly-http-2.3.36-MULE-002.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/grizzly-http-client-1.14-MULE-006.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/grizzly-http-server-2.3.36-MULE-002.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/grizzly-websockets-2.3.36-MULE-002.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/guava-25.1-jre.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/j2objc-annotations-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/jsr305-3.0.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/mailapi-1.6.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/mule-service-http-1.1.4-mule-service.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-http-ee-1.1.4-mule-service/lib/slf4j-api-1.7.25.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/services/mule-service-oauth-1.1.5-mule-service.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-oauth-1.1.5-mule-service/lib/commons-codec-1.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-oauth-1.1.5-mule-service/lib/commons-lang3-3.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/services/mule-service-scheduler-1.1.7-mule-service.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/animal-sniffer-annotations-1.14.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/c3p0-0.9.5.2-MULE-001.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/checker-qual-2.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/commons-lang3-3.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/error_prone_annotations-2.1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/guava-25.1-jre.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/j2objc-annotations-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/jsr305-3.0.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/mchange-commons-java-0.2.11.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-scheduler-1.1.7-mule-service/lib/quartz-2.2.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/services/mule-service-soap-1.1.8-mule-service.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/animal-sniffer-annotations-1.14.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/annotations-13.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/asm-5.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/bcprov-jdk15on-1.60.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/checker-qual-2.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/commons-codec-1.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/commons-io-2.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/commons-lang3-3.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cryptacular-1.1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-core-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-bindings-soap-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-databinding-jaxb-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-frontend-simple-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-management-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-security-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-security-saml-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-ws-addr-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-ws-policy-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-ws-rm-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-ws-security-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/cxf-rt-wsdl-3.2.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/dom4j-1.6.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/error_prone_annotations-2.1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/geronimo-javamail_1.4_mail-1.8.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/guava-25.1-jre.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/j2objc-annotations-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/jasypt-1.9.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/java-support-7.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/joda-time-2.9.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/jsr305-3.0.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/kotlin-stdlib-1.1.3-2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/metrics-core-3.1.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/mule-wsdl-parser-1.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/neethi-3.1.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-core-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-profile-api-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-saml-api-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-saml-impl-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-security-api-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-security-impl-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-soap-api-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-xacml-api-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-xacml-impl-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-xacml-saml-api-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-xacml-saml-impl-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-xmlsec-api-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/opensaml-xmlsec-impl-3.3.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/Saxon-HE-9.7.0-15.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/slf4j-api-1.7.25.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/spring-aop-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/spring-beans-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/spring-context-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/spring-core-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/spring-expression-4.3.19.RELEASE.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/stax-utils-20080702.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/stax2-api-3.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/woodstox-core-5.0.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/woodstox-core-asl-4.4.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/wsdl4j-1.6.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/wss4j-bindings-2.2.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/wss4j-policy-2.2.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/wss4j-ws-security-common-2.2.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/wss4j-ws-security-dom-2.2.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/wss4j-ws-security-policy-stax-2.2.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/wss4j-ws-security-stax-2.2.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/xmlschema-core-2.2.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-soap-1.1.8-mule-service/lib/xmlsec-2.0.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.mule.tooling.server.4.1.4.ee_7.3.1.201811211713/mule/services/mule-service-weave-ee-2.1.6-mule-service.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/aalto-xml-1.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/activation-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/algebra_2.12-0.7.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/animal-sniffer-annotations-1.14.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/cats-kernel_2.12-0.9.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/checker-qual-2.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/commons-codec-1.10.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/commons-collections4-4.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/commons-lang3-3.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/core-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/core-modules-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/curvesapi-1.04.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/debugger-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/edi-parser-2.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/error_prone_annotations-2.1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/excel-module-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/flatfile-module-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/guava-25.1-jre.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/j2objc-annotations-1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/jsr305-3.0.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/log4j-1.2.17.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/ltm-datamodel-2.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/machinist_2.12-0.6.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/macro-compat_2.12-1.1.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/mail-1.4.7.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/mule-service-weave-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/mule-service-weave-ee-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/mule-tooling-weave-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/parboiled_2.12-2.1.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/parser-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/poi-3.17.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/poi-ooxml-3.17.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/poi-ooxml-schemas-3.17.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/runtime-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/scala-common_2.12-0.1.3.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/scala-library-2.12.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/scala-parser-combinators_2.12-1.0.4.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/scala-reflect-2.12.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/scalactic_2.12-3.0.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/shapeless_2.12-2.3.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/spire-macros_2.12-0.14.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/spire_2.12-0.14.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/stax-api-1.0.1.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/stax2-api-4.0.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/syaml_2.12-0.1.11.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/wlang-2.1.6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/woodstox-core-5.0.2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/xmlbeans-2.6.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}configuration/org.eclipse.osgi/451/data/mule-service-weave-ee-2.1.6-mule-service/lib/yaml-module-2.1.6.jar"/>
+    </path>
+    <path id="HTTP [v1.3.2].libraryclasspath">
+        <pathelement location="../../../.m2/repository/org/mule/connectors/mule-http-connector/1.3.2/mule-http-connector-1.3.2-mule-plugin.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/guava/guava/25.1-jre/guava-25.1-jre.jar"/>
+        <pathelement location="../../../.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar"/>
+        <pathelement location="../../../.m2/repository/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar"/>
+        <pathelement location="../../../.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar"/>
+        <pathelement location="../../../.m2/repository/io/projectreactor/reactor-core/3.2.0.M1/reactor-core-3.2.0.M1.jar"/>
+        <pathelement location="../../../.m2/repository/org/checkerframework/checker-qual/2.0.0/checker-qual-2.0.0.jar"/>
+        <pathelement location="../../../.m2/repository/org/mule/modules/mule-module-cors-kernel/1.1.0/mule-module-cors-kernel-1.1.0.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar"/>
+    </path>
+    <path id="Sockets [v1.1.2].libraryclasspath">
+        <pathelement location="../../../.m2/repository/org/mule/connectors/mule-sockets-connector/1.1.2/mule-sockets-connector-1.1.2-mule-plugin.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar"/>
+        <pathelement location="../../../.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+        <pathelement location="../../../.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/guava/guava/23.5-jre/guava-23.5-jre.jar"/>
+        <pathelement location="../../../.m2/repository/org/checkerframework/checker-qual/2.0.0/checker-qual-2.0.0.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar"/>
+    </path>
+    <path id="Crypto [v1.0.0].libraryclasspath">
+        <pathelement location="../../../.m2/repository/com/mulesoft/modules/mule-cryptography-module/1.0.0/mule-cryptography-module-1.0.0-mule-plugin.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar"/>
+        <pathelement location="../../../.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+        <pathelement location="../../../.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.59/bcpkix-jdk15on-1.59.jar"/>
+        <pathelement location="../../../.m2/repository/org/bouncycastle/bcprov-ext-jdk15on/1.59/bcprov-ext-jdk15on-1.59.jar"/>
+        <pathelement location="../../../.m2/repository/org/bouncycastle/bcprov-jdk15on/1.59/bcprov-jdk15on-1.59.jar"/>
+        <pathelement location="../../../.m2/repository/org/bouncycastle/bcpg-jdk15on/1.59/bcpg-jdk15on-1.59.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/santuario/xmlsec/1.5.8/xmlsec-1.5.8.jar"/>
+        <pathelement location="../../../.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar"/>
+    </path>
+    <path id="MUnit [v2.1.5].libraryclasspath">
+        <pathelement location="../../../.m2/repository/com/mulesoft/munit/munit-runner/2.1.5/munit-runner-2.1.5-mule-plugin.jar"/>
+        <pathelement location="../../../.m2/repository/com/mulesoft/munit/munit-common/2.1.5/munit-common-2.1.5.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/code/gson/gson/2.6.2/gson-2.6.2.jar"/>
+        <pathelement location="../../../.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
+        <pathelement location="../../../.m2/repository/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar"/>
+        <pathelement location="../../../.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar"/>
+        <pathelement location="../../../.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar"/>
+    </path>
+    <path id="MUnit Tools [v2.1.5].libraryclasspath">
+        <pathelement location="../../../.m2/repository/com/mulesoft/munit/munit-tools/2.1.5/munit-tools-2.1.5-mule-plugin.jar"/>
+        <pathelement location="../../../.m2/repository/com/mulesoft/munit/munit-assert/2.1.5/munit-assert-2.1.5.jar"/>
+        <pathelement location="../../../.m2/repository/com/mulesoft/munit/munit-common/2.1.5/munit-common-2.1.5.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar"/>
+        <pathelement location="../../../.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
+        <pathelement location="../../../.m2/repository/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar"/>
+        <pathelement location="../../../.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar"/>
+        <pathelement location="../../../.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar"/>
+        <pathelement location="../../../.m2/repository/com/mulesoft/munit/munit-mock/2.1.5/munit-mock-2.1.5.jar"/>
+    </path>
+    <path id="pgp-test-encrypt.classpath">
+        <path refid="Mule Server 4.1.4 EE.libraryclasspath"/>
+        <pathelement location="target/classes"/>
+        <pathelement location="target/test-classes"/>
+        <path refid="HTTP [v1.3.2].libraryclasspath"/>
+        <path refid="Sockets [v1.1.2].libraryclasspath"/>
+        <path refid="Crypto [v1.0.0].libraryclasspath"/>
+        <path refid="MUnit [v2.1.5].libraryclasspath"/>
+        <path refid="MUnit Tools [v2.1.5].libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <mkdir dir="target/test-classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/mule">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/resources">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/resources">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/test/munit">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+        <delete dir="target/test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/mule"/>
+            <src path="src/main/java"/>
+            <src path="src/main/resources"/>
+            <src path="src/test/munit"/>
+            <classpath refid="pgp-test-encrypt.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/test/java"/>
+            <src path="src/test/resources"/>
+            <classpath refid="pgp-test-encrypt.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:crypto="http://www.mulesoft.org/schema/mule/crypto" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/crypto http://www.mulesoft.org/schema/mule/crypto/current/mule-crypto.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="86c5f41f-4fef-4dbc-8bdb-828e803009c7" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<crypto:pgp-config name="Crypto_Pgp" doc:name="Crypto Pgp" doc:id="07d136ed-434e-45dd-8441-b0a9b58fab30" />
+	<crypto:pgp-config name="Crypto_Pgp1" doc:name="Crypto Pgp" doc:id="fcb953c5-a701-4e1f-877a-e6b11b3e9ffa" publicKeyring="D:\Users\ChowdhuM\AnypointStudio\studio-workspace\pgp-test-encrypt\src\main\resources\config\0x8B04986E-pub.asc.gpg" privateKeyring="D:\Users\ChowdhuM\AnypointStudio\studio-workspace\pgp-test-encrypt\src\main\resources\config\0x8B04986E-sec.asc.gpg">
+		<crypto:pgp-key-infos >
+			<crypto:pgp-asymmetric-key-info keyId="100" passphrase="pgptest" principal="Manash (PGP Test) &lt;manash.chowdhury-non-empl@moodys.com&gt;"/>
+		</crypto:pgp-key-infos>
+	</crypto:pgp-config>
+	<crypto:pgp-config name="Crypto_Pgp2" doc:name="Crypto Pgp" doc:id="7fd16bbd-e7b2-403c-b3bc-0c3fb01ab5bb" publicKeyring="D:\Users\ChowdhuM\AnypointStudio\studio-workspace\pgp-test-encrypt\src\main\resources\config\0x8B04986E-pub.asc.gpg" privateKeyring="D:\Users\ChowdhuM\AnypointStudio\studio-workspace\pgp-test-encrypt\src\main\resources\config\0x8B04986E-sec.asc.gpg" >
+		<crypto:pgp-key-infos >
+			<crypto:pgp-asymmetric-key-info keyId="100" principal="Manash (PGP Test) &lt;manash.chowdhury-non-empl@moodys.com&gt;" passphrase="pgptest" />
+		</crypto:pgp-key-infos>
+	</crypto:pgp-config>
+	<flow name="pgp-test-encryptFlow" doc:id="51a3d8fd-39e6-46c8-9c06-333d55d884ff" >
+		<http:listener doc:name="Listener" doc:id="8031d11e-27c5-4572-926c-6f86394d648a" config-ref="HTTP_Listener_config" path="/pgpE">
+			<reconnect />
+		</http:listener>
+		<logger level="INFO" doc:name="Logger" doc:id="bca3f5f4-d8f4-41cb-9c73-76e35d7e435d" message="'This is input:' ++ #[payload]"/>
+		<crypto:pgp-encrypt doc:name="Pgp encrypt" doc:id="6df89f5b-6aa6-43c3-b36b-c59df49c1f55" config-ref="Crypto_Pgp1" keyId="100">
+		</crypto:pgp-encrypt>
+		<logger level="INFO" doc:name="Logger" doc:id="fcaeb9f8-ce3d-4074-9b4c-d1a426cf78e8" message="'This is encrypted:' ++ #[payload]"/>
+		<crypto:pgp-decrypt doc:name="Pgp decrypt" doc:id="3fa71d9a-444b-4e29-bcc3-1bcdd3665a7a" config-ref="Crypto_Pgp2"/>
+		<logger level="INFO" doc:name="Logger" doc:id="63832ff0-eca0-4e9c-85bc-3e5257d08d86" message="'This is output:' ++ #[payload]"/>
+	</flow>
+</mule>

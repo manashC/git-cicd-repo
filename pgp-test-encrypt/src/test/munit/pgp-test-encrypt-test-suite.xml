@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="pgp-test-encrypt-test-suite.xml" />
+	<munit:test name="pgp-test-encrypt-test-suite-pgp-test-encryptFlowTest" description="Test" doc:id="6f00a329-3bc8-4baa-bd63-97c96a1395bd" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to pgp-test-encryptFlow" doc:id="d2585573-57d0-44e3-8bea-7ec9c59f25c0" name="pgp-test-encryptFlow"/>
+		</munit:execution>
+	</munit:test>
+
+
+</mule>
