@@ -29,7 +29,7 @@
 				<configuration>
 				</configuration>
 			</plugin>
-	<!-- Commented Out
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
@@ -38,10 +38,9 @@
 					<checkModificationExcludes>
 						<checkModificationExclude>pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
-					
+
 				</configuration>
-							</plugin>
-							 -->
+			</plugin>
 			<plugin>
 				<artifactId>maven-scm-plugin</artifactId>
 				<version>1.9.5</version>
@@ -51,7 +50,7 @@
 					<password>${scmpassword}</password>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
 				<artifactId>munit-maven-plugin</artifactId>
@@ -78,7 +77,7 @@
 		</plugins>
 	</build>
 	<scm>
-		<connection>scm:git:https://github.com/manashC/git-cicd-repo.git</connection>		
+		<connection>scm:git:https://github.com/manashC/git-cicd-repo.git</connection>
 		<tag>MASTER</tag>
 	</scm>
 	<distributionManagement>
