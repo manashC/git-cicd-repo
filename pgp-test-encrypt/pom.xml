@@ -29,6 +29,7 @@
 				<configuration>
 				</configuration>
 			</plugin>
+	<!-- Commented Out
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
@@ -37,7 +38,7 @@
 					<checkModificationExcludes>
 						<checkModificationExclude>pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
-					<!-- <tagNameFormat>v@{project.version}</tagNameFormat> -->
+					
 				</configuration>
 			</plugin>
 			<plugin>
@@ -49,6 +50,7 @@
 					<password>${scmpassword}</password>
 				</configuration>
 			</plugin>
+			 -->
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
 				<artifactId>munit-maven-plugin</artifactId>
